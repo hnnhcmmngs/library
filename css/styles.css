@@ -1,5 +1,10 @@
-button {
+#newbook {
     background: #ccc url("../img/plus.svg") no-repeat top left;
     padding-left: 32px;
     height: 32px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
 }

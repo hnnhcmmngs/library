@@ -1,5 +1,8 @@
-const library = document.querySelector("#library");
 const myLibrary = [];
+const library = document.querySelector("#library");
+const newBook = document.querySelector("#newbook");
+const dialog = document.querySelector("#bookinput");
+const addBook = document.querySelector("#addbook");
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -41,3 +44,7 @@ addBookToLibrary(theHungerGames);
 addBookToLibrary(prideAndPrejudice);
 
 displayBooks();
+
+newBook.addEventListener("click", () => {
+    dialog.showModal();
+});
