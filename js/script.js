@@ -39,3 +39,5 @@ theHungerGames = new Book("The Hunger Games", "Suzanne Collins", 384, true);
 prideAndPrejudice = new Book("Pride and Prejudice", "Jane Austen", 259, false);
 addBookToLibrary(theHungerGames);
 addBookToLibrary(prideAndPrejudice);
+
+displayBooks();
