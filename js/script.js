@@ -3,7 +3,7 @@ const library = document.querySelector("#library");
 const newBook = document.querySelector("#newbook");
 const dialog = document.querySelector("#bookinput");
 const addBook = document.querySelector("#addbook");
-const bookForm = document.querySelector("form");
+const bookForm = document.querySelector("#bookform");
 const cancel = document.querySelector("#cancel");
 
 function Book(title, author, pages, read) {
