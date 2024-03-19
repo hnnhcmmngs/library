@@ -29,8 +29,15 @@ function displayBook(book) {
     author.textContent = `Author: ${book.author}`;
     let pages = document.createElement("div");
     pages.textContent = `${book.pages} ${book.pages == 1 ? "page" : "pages"}`;
-    let read = document.createElement("div");
+    let read = document.createElement("button");
     read.textContent = `${book.read ? "Read" : "Not Read"}`;
+    read.classList = `${book.read ? "read" : "notread"}`;
+    read.addEventListener("click", () => {
+        book.toggleStatus();
+        read.textContent = `${book.read ? "Read" : "Not Read"}`;
+        read.classList = `${book.read ? "read" : "notread"}`;
+        console.log(myLibrary);
+    });
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "Remove";
     deleteButton.addEventListener("click", () => {

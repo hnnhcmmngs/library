@@ -4,6 +4,14 @@
     height: 32px;
 }
 
+.read {
+    background-color: cornflowerblue;
+}
+
+.notread {
+    appearance: none;
+}
+
 form {
     display: flex;
     flex-direction: column;
