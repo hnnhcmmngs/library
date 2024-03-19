@@ -30,11 +30,20 @@ function displayBook(book) {
     pages.textContent = `${book.pages} ${book.pages == 1 ? "page" : "pages"}`;
     let read = document.createElement("div");
     read.textContent = `${book.read ? "Read" : "Not Read"}`;
+    let deleteButton = document.createElement("button");
+    deleteButton.textContent = "Remove";
+    deleteButton.addEventListener("click", () => {
+        let deleteIndex = myLibrary.indexOf(book);
+        myLibrary.splice(deleteIndex, 1);
+        library.removeChild(library.children[deleteIndex]);
+        console.log(myLibrary);
+    });
     b.style.border = "3px solid blue";
     b.appendChild(title);
     b.appendChild(author);
     b.appendChild(pages);
     b.appendChild(read);
+    b.appendChild(deleteButton);
     library.appendChild(b);
 }
 
