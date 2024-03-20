@@ -17,16 +17,20 @@
     <dialog id="bookinput">
         <p>Enter the book's information:</p>
         <form method="dialog" id="bookform">
-            <label for="title">Title:</label>
+            <label for="title">TITLE</label>
             <input type="text" name="title" id="title" required>
-            <label for="author">Author:</label>
+            <label for="author">AUTHOR</label>
             <input type="text" name="author" id="author" required>
-            <label for="pages">No. of Pages:</label>
+            <label for="pages">NO. OF PAGES</label>
             <input type="number" name="pages" id="pages" min = "1" required>
-            <label for="read">Read?</label>
-            <input type="checkbox" name="read" id="read">
-            <input type="submit" id="addbook" value="Add Book">
-            <input type="submit" id="cancel" value="Cancel" formnovalidate>
+            <div>
+                <label for="read">READ?</label>
+                <input type="checkbox" name="read" id="read">
+            </div>
+            <div>
+                <input type="submit" id="addbook" value="Add Book" class="grow">
+                <input type="submit" id="cancel" value="Cancel" class="grow" formnovalidate>
+            </div>
         </form>
     </dialog>
 </body>

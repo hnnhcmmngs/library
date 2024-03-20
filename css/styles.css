@@ -119,9 +119,74 @@ button:hover {
     color: var(--sub-color);
 }
 
+dialog {
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    justify-items: space-between;
+    gap: 16px;
+    background-color: var(--background-color);
+    box-shadow: 0px 5px 10px 0px rgba(30, 27, 75, 0.5);
+}
+
+dialog>p {
+    height: min-content;
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: var(--main-color);
+}
+
 form {
     display: flex;
     flex-direction: column;
+    gap: 4px;
+}
+
+form>div {
+    display: flex;
+}
+
+form>div:last-child {
+    justify-content: space-around;
+}
+
+form label {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    color: var(--sub-color);
+}
+
+form input {
+    border: none;
+    border: 1px solid var(--sub-color);
+    border-radius: 10px;
+    height: 20px;
+    padding: 0 8px;
+}
+
+form input[type="submit"] {
+    appearance: none;
+    border: none;
+    border-radius: 15px;
+    height: 30px;
+    width: 80px;
+}
+
+#addbook {
+    background-color: var(--sub-color);
+    color: var(--background-color);
+}
+
+#cancel {
+    background-color: white;
+    color: var(--sub-color);
+    border: 1px solid var(--sub-color);
+}
+
+form input[type="submit"]:hover {
+    cursor: pointer;
 }
 
 .grow { 
