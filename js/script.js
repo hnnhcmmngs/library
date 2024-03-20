@@ -23,35 +23,37 @@ function addBookToLibrary(book) {
 
 function displayBook(book) {
     let b = document.createElement("div");
+    b.classList = "card";
     let title = document.createElement("div");
-    title.textContent = `Title: ${book.title}`;
+    title.textContent = `${book.title}`;
     let author = document.createElement("div");
-    author.textContent = `Author: ${book.author}`;
+    author.textContent = `by ${book.author}`;
     let pages = document.createElement("div");
     pages.textContent = `${book.pages} ${book.pages == 1 ? "page" : "pages"}`;
     let read = document.createElement("button");
     read.textContent = `${book.read ? "Read" : "Not Read"}`;
-    read.classList = `${book.read ? "read" : "notread"}`;
+    read.classList = `${book.read ? "read" : "notread"} grow`;
+    read.style.width = "80px";
+    read.style.height = "30px";
     read.addEventListener("click", () => {
         book.toggleStatus();
         read.textContent = `${book.read ? "Read" : "Not Read"}`;
-        read.classList = `${book.read ? "read" : "notread"}`;
-        console.log(myLibrary);
+        read.classList = `${book.read ? "read" : "notread"} grow`;
     });
-    let deleteButton = document.createElement("button");
-    deleteButton.textContent = "Remove";
+    let deleteButton = document.createElement("img");
+    deleteButton.src = "img/remove.svg";
+    deleteButton.style.height = "20px";
+    deleteButton.classList = "remove grow";
     deleteButton.addEventListener("click", () => {
         let deleteIndex = myLibrary.indexOf(book);
         myLibrary.splice(deleteIndex, 1);
         library.removeChild(library.children[deleteIndex]);
-        console.log(myLibrary);
     });
-    b.style.border = "3px solid blue";
+    b.appendChild(deleteButton);
     b.appendChild(title);
     b.appendChild(author);
     b.appendChild(pages);
     b.appendChild(read);
-    b.appendChild(deleteButton);
     library.appendChild(b);
 }
 

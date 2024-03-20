@@ -3,10 +3,14 @@
     margin: 0;
     padding: 0;
     height: 100%;
+    --main-color: #1e1b4b;
+    --background-color: whitesmoke;
+    --accent-color: #c7d2fe;
+    --sub-color: #312e81;
 }
 
 body {
-    background-color: #1e1b4b;
+    background-color: var(--main-color);
     display: grid;
     grid-template-rows: min-content 1fr;
     margin: 0;
@@ -16,11 +20,12 @@ body {
 
 #nav {
     display: flex;
-    color: whitesmoke;
+    color: var(--background-color);
     align-items: center;
     font-size: 50px;
     padding: 8px 16px;
     gap: 16px;
+    justify-content: start;
 }
 
 #nav>img {
@@ -41,18 +46,92 @@ body {
 }
 
 #library {
-    background-color: whitesmoke;
+    background-color: var(--background-color);
+    border-radius: 12px 12px 0 0;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: min-content;
+    gap: 32px;
+}
+
+.card {
+    background-color: var(--accent-color);
+    border-radius: 12px;
+    padding: 16px;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+    box-shadow: 0px 5px 10px 0px rgba(30, 27, 75, 0.5);
+    transition: transform ease .5s, box-shadow ease .5s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px 2px rgba(30, 27, 75, 0.25);
+}
+
+.card>*:nth-child(2) {
+    color: var(--main-color);
+    font-size: 22px;
+}
+
+.card>*:nth-child(3), .card>*:nth-child(4) {
+    color: var(--sub-color);
+}
+
+.remove {
+    filter: brightness(0) saturate(100%) invert(19%) sepia(94%) saturate(4351%) hue-rotate(352deg) brightness(90%) contrast(91%);
+    align-self: end;
+}
+
+.remove:hover {
+    cursor: pointer;
+}
+
+button {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.read, .notread {
+    align-self: center;
 }
 
 .read {
-    background-color: cornflowerblue;
+    appearance: none;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--sub-color);
+    color: var(--background-color);
 }
 
 .notread {
     appearance: none;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--background-color);
+    color: var(--sub-color);
 }
 
 form {
     display: flex;
     flex-direction: column;
+}
+
+.grow { 
+    transition: all .2s ease-in-out;
+}
+
+.grow:hover { 
+    transform: scale(1.1);
+}
+
+.grow:active{
+    transform: scale(0.99);
 }
