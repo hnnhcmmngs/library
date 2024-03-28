@@ -6,15 +6,17 @@ const addBook = document.querySelector("#addbook");
 const bookForm = document.querySelector("#bookform");
 const cancel = document.querySelector("#cancel");
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 
-Book.prototype.toggleStatus = function() {
-    this.read = this.read ? false : true;
+    toggleStatus = () => {
+        this.read = this.read ? false : true;
+    }
 }
 
 function addBookToLibrary(book) {
